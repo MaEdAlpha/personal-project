@@ -1,0 +1,29 @@
+<p>
+  <mat-toolbar color="primary">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="isDrawerOpen = !isDrawerOpen"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <span class="example-spacer"></span>
+
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      (click)="isLight = !isLight"
+    >
+      <ng-container *ngIf="isLight; else darkThemeIcon">
+        <span class="material-icons">light_mode </span>
+      </ng-container>
+      <ng-template #darkThemeIcon>
+        <span class="material-icons">dark_mode </span>
+      </ng-template>
+    </button>
+  </mat-toolbar>
+</p>
+<app-sidenav [showFiller]="isDrawerOpen"></app-sidenav>

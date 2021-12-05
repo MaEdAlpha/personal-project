@@ -1,0 +1,11 @@
+<mat-drawer-container class="application-container" autosize [hasBackdrop]="true">
+    <mat-drawer #drawer class="application-sidenav" mode="side">
+      <p>Auto-resizing sidenav</p>
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    </mat-drawer>
+  
+    <div class="application-sidenav-content">
+        <p>Container</p>
+    </div>
+  
+  </mat-drawer-container>
