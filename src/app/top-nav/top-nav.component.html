@@ -1,7 +1,9 @@
 <p>
-  <mat-toolbar color="primary">
+  
+  <mat-toolbar color="primary" [ngClass]="{'light-mode':!isDarkTheme, 'dark-mode':isDarkTheme}">
     <button
       mat-icon-button
+      color="accent"
       class="example-icon"
       aria-label="Example icon-button with menu icon"
       (click)="isDrawerOpen = !isDrawerOpen"
@@ -14,10 +16,11 @@
     <button
       mat-icon-button
       class="example-icon"
+      color="accent"
       aria-label="Example icon-button with share icon"
-      (click)="isLight = !isLight"
+      (click)="isDarkTheme = !isDarkTheme; refreshPage();"
     >
-      <ng-container *ngIf="isLight; else darkThemeIcon">
+      <ng-container *ngIf="!isDarkTheme; else darkThemeIcon">
         <span class="material-icons">light_mode </span>
       </ng-container>
       <ng-template #darkThemeIcon>

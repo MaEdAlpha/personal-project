@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {SidenavComponent} from './sidenav/sidenav.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatSidenavModule,    
+    MatSidenavModule,
+    MatRippleModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

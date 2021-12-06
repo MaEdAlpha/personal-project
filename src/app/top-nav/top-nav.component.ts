@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-top-nav',
@@ -6,12 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-nav.component.scss']
 })
 export class TopNavComponent implements OnInit {
-  public isLight:boolean = true;
+  public isDarkTheme:boolean = false;
   public isDrawerOpen:boolean = false;
   
-  constructor() { }
+  constructor(private chRef:ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
 
+  refreshPage(){
+    setTimeout(()=>{
+      this.chRef.detectChanges();
+    },500);
+  }
 }

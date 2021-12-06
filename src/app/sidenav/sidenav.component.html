@@ -1,8 +1,8 @@
-<mat-drawer-container class="application-container" autosize [hasBackdrop]="true">
+<mat-drawer-container class="application-container" color="accent" autosize [hasBackdrop]="true">
     <mat-drawer #drawer class="application-sidenav" mode="side">
       <ng-container *ngIf="showFiller">
         <div class="nav-button__wrapper" *ngFor="let component of components"> 
-          <button mat-raised-button class="nav-button" (click)="retrieveComponent(component.toolTag)"> {{component.toolName}}</button>
+          <button mat-raised-button color="primary" class="nav-button " (click)="retrieveComponent(component.toolTag)"> {{component.toolName}}</button>
         </div>
       </ng-container>
     </mat-drawer>
