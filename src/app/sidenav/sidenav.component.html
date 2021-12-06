@@ -1,11 +1,14 @@
 <mat-drawer-container class="application-container" autosize [hasBackdrop]="true">
     <mat-drawer #drawer class="application-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <ng-container *ngIf="showFiller">
+        <div class="nav-button__wrapper" *ngFor="let component of components"> 
+          <button mat-raised-button class="nav-button" (click)="retrieveComponent(component.toolTag)"> {{component.toolName}}</button>
+        </div>
+      </ng-container>
     </mat-drawer>
   
+    <!-- Load component -->
     <div class="application-sidenav-content">
-        <p>Container</p>
+        <p>Component loaded (maybe factory pattern) based off of button click <br> Loading spinner needed as well</p>
     </div>
-  
-  </mat-drawer-container>
+</mat-drawer-container>
